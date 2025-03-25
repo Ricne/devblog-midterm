@@ -4,7 +4,7 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "4000:3000"
     depends_on:
       mongo:
         condition: service_healthy  # Đảm bảo MongoDB sẵn sàng trước khi chạy app
