@@ -4,11 +4,21 @@ dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*  
+package-lock.json*  
 
 # Docker
-*.env
+*.env            
 docker-compose.override.yml
 .dockerignore
+Dockerfile.dev    
+
+# Build files
+build/
+out/
+coverage/        
+.tmp/
+.cache/
 
 # Logs & Temp files
 logs/
@@ -18,6 +28,7 @@ logs/
 *.seed
 *.tgz
 *.swp
+*.lock
 
 # System files (Windows/macOS/Linux)
 .DS_Store
@@ -34,4 +45,11 @@ Thumbs.db
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.sw? 
+*.log
+*.bak
+
+# OS files
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
