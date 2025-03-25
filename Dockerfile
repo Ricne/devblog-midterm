@@ -1,21 +1,20 @@
-# Sử dụng image Node.js chính thức
+# Sử dụng Node.js 18
 FROM node:18
 
-# Đặt thư mục làm việc trong container
+# Đặt thư mục làm việc
 WORKDIR /app
 
-# Sao chép file package.json và cài đặt dependencies
+# Copy package.json và package-lock.json trước
 COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
 
-# Sao chép toàn bộ source code vào container
+# Cài đặt dependencies một cách chắc chắn
+RUN npm ci --omit=dev  
+
+# Copy toàn bộ code vào container
 COPY . .
 
-# Nếu bạn muốn tạo người dùng cho MongoDB, bạn cần sao chép file user.json vào thư mục khởi tạo MongoDB
-COPY user.json /docker-entrypoint-initdb.d/
-
-# Expose port (tùy vào ứng dụng Node.js)
+# Expose cổng 3000
 EXPOSE 3000
 
-# Chạy ứng dụng Node.js
+# Lệnh chạy app
 CMD ["npm", "start"]
