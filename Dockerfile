@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Sao chép file package.json và cài đặt dependencies
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci --omit=dev
 
 # Sao chép toàn bộ source code vào container
 COPY . .
@@ -18,4 +18,4 @@ COPY user.json /docker-entrypoint-initdb.d/
 EXPOSE 3000
 
 # Chạy ứng dụng Node.js
-CMD ["node", "bin/www"]
+CMD ["npm", "start"]

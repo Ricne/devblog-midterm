@@ -7,7 +7,7 @@
     "tailwind": "tailwindcss -i ./public/stylesheets/input.css -o ./public/stylesheets/style.css --watch"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
     "cookie-parser": "~1.4.4",
     "crypto-js": "^4.2.0",
     "debug": "~2.6.9",
